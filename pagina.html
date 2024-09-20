@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lugares Turísticos na Europa</title>
     <style>
+        /* Estilos globais */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -15,60 +16,96 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
         }
 
         h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
         main {
-            padding: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
         .card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            border-bottom: 2px solid #333;
         }
 
         .card-content {
-            padding: 15px;
+            padding: 20px;
+            text-align: center;
         }
 
         .card h2 {
-            margin-top: 0;
+            margin-top: 10px;
+            font-size: 1.8em;
+            color: #333;
         }
 
         .card p {
             font-size: 1em;
-            color: #333;
+            color: #666;
             line-height: 1.6;
         }
 
         footer {
-            text-align: center;
-            padding: 10px;
             background-color: #333;
-            color: #fff;
-            position: fixed;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
             bottom: 0;
             width: 100%;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        /* Responsividade para telas menores */
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .card-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .card img {
+                height: 150px;
+            }
         }
     </style>
 </head>
